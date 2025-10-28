@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "To Do",
+    "tasks": [
+      {
+        "id": 1,
+        "text": "Write project documentation"
+      },
+      {
+        "id": 6,
+        "text": "Fix small UI bugs"
+      },
+      {
+        "id": 6,
+        "text": "Fix small UI bugs"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "In Progress",
+    "tasks": [
+      {
+        "id": 4,
+        "text": "Implement drag and drop"
+      },
+      {
+        "id": 5,
+        "text": "Style task cards"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Review",
+    "tasks": [
+      {
+        "id": 6,
+        "text": "Check error handling"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Done",
+    "tasks": [
+      {
+        "id": 7,
+        "text": "Set up Express server"
+      },
+      {
+        "id": 8,
+        "text": "Connect frontend with API"
+      }
+    ]
+  }
+]

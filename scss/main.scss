@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 20px;
+    background: url('../images/background.jpg') center/ cover no-repeat;
+
+    // overlay
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0; // shorthand for top:0; right:0; bottom:0; left:0;
+        background-color: rgba(205, 203, 203, 0.6); // black overlay with 50% opacity
+        z-index: 0;
+    }
+
+    // make sure content is above the overlay
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+
+    .app__header {
+        margin-bottom: 20px;
+
+        h1 {
+
+            color: rgb(65, 71, 88);
+            font-size: 52px;
+            text-align: center;
+        }
+
+    }
+
+    .boards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); // default 5 columns
+        gap: 16px;
+
+        @media (max-width: 1024px) {
+            // tablet breakpoint
+            grid-template-columns: repeat(3, 1fr); // 3 columns on smaller screens
+        }
+
+        @media (max-width: 768px) {
+            // mobile breakpoint (optional)
+            grid-template-columns: repeat(2, 1fr); // 1 column on small screens
+        }
+
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-self: baseline;
+            max-width: 250px;
+            min-width: 180px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 0 15px;
+            padding: 10px;
+            transition: .3s all ease;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+
+            .title {
+                padding: 5px;
+
+                color: white;
+
+                &:focus {
+                    outline: 1px solid rgba(168, 168, 168, 0.45)
+                }
+            }
+
+            .delete__btn {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background: rgba(160, 17, 12, 0.8);
+                color: white;
+                border-radius: 3px;
+                font-size: 14px;
+
+                &:hover {
+                    background: rgb(184, 15, 9);
+                }
+            }
+
+            .list {
+                min-height: 40px;
+
+                &__item {
+                    background-color: #fefefe;
+                    border-radius: 3px;
+                    padding: 10px;
+                    text-align: center;
+                    margin: 4px 0;
+                    cursor: pointer;
+                    font-size: 14px;
+                    outline: none;
+                    border: none;
+                }
+            }
+
+            .form {
+                border-radius: 3px;
+                margin-top: auto;
+                display: none;
+
+                .textarea {
+                    resize: none;
+                    height: 60px;
+                    border-radius: 3px;
+                    border: none;
+                    background: white;
+                    padding: 10px;
+                    width: 100%;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+
+                    .add__item-btn {
+                        background-color: rgb(13, 136, 218);
+                        border: none;
+                        height: 35px;
+                        cursor: pointer;
+                        color: white;
+                        border-radius: 3px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 10px;
+                        width: 100%
+                    }
+
+                    .cancel__item-btn {
+                        padding: 0 10px;
+                        background: rgb(160, 17, 12);
+                        border: none;
+                        height: 35px;
+                        cursor: pointer;
+                        color: white;
+                        border-radius: 3px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: auto;
+                        width: 75px;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+
+            .add__btn {
+                height: 30px;
+                background: rgba(155, 155, 155, 0.4);
+                border-radius: 3px;
+                margin-top: 5px;
+                display: flex;
+                font-size: 12px;
+                align-items: center;
+                padding-left: 10px;
+                color: white;
+                cursor: pointer;
+
+                span {
+                    font-size: 24px;
+                    margin-right: 10px;
+                    color: white
+                }
+            }
+        }
+    }
+
+    .button {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(19, 130, 204, .62);
+        border: none;
+        width: 150px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%);
+        color: white;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+}
