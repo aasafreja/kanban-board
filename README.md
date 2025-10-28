@@ -29,7 +29,7 @@ This project demonstrates a complete end-to-end workflow — from backend API de
 - ✨ Inline title editing with auto-save
 - 🔁 Modular structure (`api.js`, `ui.js`, `main.js`)
 - ⚙️ RESTful API built with **Express**
-- 🧱 Clean UI built with **Vanilla JavaScript** and **SCSS**
+- 🧱 Follows **MVC architecture** for backend organization
 
 ---
 
